@@ -1,13 +1,47 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+.hero-section {
+  background: url(../public/bg-1.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* max-height: 100vh; */
+}
+.bg-b {
+  background: url(../public/p-2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  /* height: 60vh; */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.bd-d {
+  background: url(../public/bg-8.png);
+}
+.bg-c {
+  background: url(../public/p-3.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+}
+
+.event-bg {
+  background: url(../public/bg6\ .png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 82vh;
+  width: 58%;
+}
+
+/* .bg-a {
+  background: url(../public/p-1.png);
+} */
+
+.gsap-marker-scroller-end {
+  display: none !important;
+}
+.gsap-marker-scroller-start {
+  display: none !important;
 }

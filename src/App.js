@@ -10,9 +10,8 @@ export default function App() {
     <div>
       <HeroSection />
       <Job />
-      {/* <FutureNetwork /> */}
       <Animate />
-      <Avatar />
+      <FutureNetwork />
       <Event />
     </div>
   );

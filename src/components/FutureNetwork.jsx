@@ -1,182 +1,138 @@
 import React, { useEffect, useRef } from "react";
+import { Carousel } from "react-responsive-carousel";
 
 const FutureNetwork = () => {
   const data = [
     {
+      id: 1,
       title: "Unlock the full potential of your future network.",
       p1: "Hello, I am",
       p1a: "Alexander",
-      p1Icon: "public/hand.png",
-      p2Icon: "public/heart.png",
-      p3Icon: "public/1.png",
-      p4Icon: "public/2.png",
-      p5Icon: "public/3.png",
+      p1Icon: "hand.png",
+      p2Icon: "heart.png",
+      p3Icon: "1.png",
+      p4Icon: "2.png",
+      p5Icon: "3.png",
       p2: "BSc Computer Science",
       p2b: "Goethe University Frankfurt",
       p3: "Finance",
       p4: "Economics",
       p5: "Supply Chain",
-      backgroundImage: "public/bg-6.png",
+      backgroundImage: "bg-6.png",
     },
     {
+      id: 2,
       title: "Unlock the full potential of your future network.",
       p1: "Hello, I am",
       p1a: "Alexander",
-      p1Icon: "public/hand.png",
-      p2Icon: "public/heart.png",
-      p3Icon: "public/1.png",
-      p4Icon: "public/2.png",
-      p5Icon: "public/3.png",
+      p1Icon: "hand.png",
+      p2Icon: "heart.png",
+      p3Icon: "1.png",
+      p4Icon: "2.png",
+      p5Icon: "3.png",
       p2: "BSc Computer Science",
       p2b: "Goethe University Frankfurt",
       p3: "Finance",
       p4: "Economics",
       p5: "Supply Chain",
-      backgroundImage: "public/bg-5.png",
+      backgroundImage: "bg-5.png",
     },
     {
+      id: 3,
       title: "Unlock the full potential of your future network.",
       p1: "Hello, I am",
       p1a: "Alexander",
-      p1Icon: "public/hand.png",
-      p2Icon: "public/heart.png",
-      p3Icon: "public/1.png",
-      p4Icon: "public/2.png",
-      p5Icon: "public/3.png",
+      p1Icon: "hand.png",
+      p2Icon: "heart.png",
+      p3Icon: "1.png",
+      p4Icon: "2.png",
+      p5Icon: "3.png",
       p2: "BSc Computer Science",
       p2b: "Goethe University Frankfurt",
       p3: "Finance",
       p4: "Economics",
       p5: "Supply Chain",
-      backgroundImage: "public/bg-4.png",
+      backgroundImage: "bg-4.png",
     },
   ];
 
-  return <div>{data.map()}</div>;
+  // useEffect(() => {
+  //   const floatingElements = document.querySelectorAll(".floating");
+
+  //   floatingElements.forEach((element) => {
+  //     animateFloating(element);
+  //   });
+
+  //   function animateFloating(element) {
+  //     const duration = 20000; // Set the duration of the animation in milliseconds
+
+  //     function updatePosition() {
+  //       const angle = Math.random() * Math.PI * 2; // Random angle
+  //       const distance = Math.random() * 700 + 700; // Random distance
+  //       const newX = Math.cos(angle) * distance;
+  //       const newY = Math.sin(angle) * distance;
+
+  //       element.style.transform = `translate(${newX}px, ${newY}px)`;
+
+  //       requestAnimationFrame(updatePosition);
+  //     }
+
+  //     updatePosition();
+  //   }
+  // }, []);
+  return (
+    <div className="mt-24 px-4 xs:px-1">
+      <Carousel showStatus={false} autoPlay={true} showThumbs={true}>
+        {data.map((avatar) => (
+          <div
+            key={avatar.id}
+            style={{
+              backgroundImage: `url(${avatar.backgroundImage})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              height: "120vh",
+            }}
+            className="py-32 xs:pt-4 rounded-lg relative"
+          >
+            <h1 className="text-4xl desk:text-3xl desk:top-[2rem] xs:text-2xl absolute top-[3rem] left-[3rem] xs:w-[20rem] font-semibold w-[26rem] px-2 ">
+              {avatar.title}
+            </h1>
+            <div className="flex absolute top-[14rem] desk:left-[3rem] left-[25rem] flex-row items-center justify-center bg-white w-[15rem] px-2 py-2 rounded-lg gap-1 floating">
+              <span className="w-14">
+                <img src={avatar.p1Icon} alt="" />
+              </span>
+              <p className="flex flex-col font-normal">
+                <span>{avatar.p1}</span>
+                <span className="text-3xl font-medium">{avatar.p1a}</span>
+              </p>
+            </div>
+            <div className="flex flex-row absolute top-[30rem] left-[15rem] desk:left-[2rem] items-center justify-center bg-white w-[20rem] px-2 py-2 rounded-lg gap-1 floating">
+              <span className="w-14">
+                <img src={avatar.p2Icon} alt="" />
+              </span>
+              <p className="flex flex-col font-normal">
+                <span className="text-lg font-medium">{avatar.p2}</span>
+                <span className="text-base font-medium">{avatar.p2b}</span>
+              </p>
+            </div>
+            <div className="flex flex-row absolute top-[10rem] right-[23rem] desk:right-[2rem] w-[10rem] items-center py-2 px-2 gap-1 justify-center bg-white rounded-xl floating">
+              <img src={avatar.p3Icon} alt="" />
+              <p className="font-normal">{avatar.p3}</p>
+            </div>
+            <div className="flex flex-row absolute top-[20rem] right-[26rem] desk:right-[2rem] w-[10rem] items-center py-2 px-2 gap-1 justify-center bg-white rounded-xl floating">
+              <img src={avatar.p4Icon} alt="" />
+              <p className="font-normal">{avatar.p4}</p>
+            </div>
+            <div className="flex flex-row absolute top-[30rem] right-[20rem] w-[10rem] desk:right-[1rem] items-center py-2 px-2 gap-1 justify-center bg-white rounded-xl floating">
+              <img src={avatar.p5Icon} alt="" />
+              <p className="font-normal">{avatar.p5}</p>
+            </div>
+          </div>
+        ))}
+      </Carousel>
+    </div>
+  );
 };
 
 export default FutureNetwork;
-// import { createContext, useState, useEffect, useRef } from "react";
-// import { state } from "../utils/state";
-// import { swipe } from "../utils/swipe";
-// import { scroll } from "../utils/scroll";
-// import { context } from "../utils/context";
-// import Detector from "../detector/detector";
-// import cn from "classnames";
-// import "./index.scss";
-// import { setToRender, removeFromRender } from "@/Animator/js/renderer";
-
-// // fixme
-// import { ModalContext } from "../components/Modal/Modal";
-// import { useContext } from "react";
-// //
-
-// export const ControllerContext = createContext();
-
-// const Controller = ({
-//   children,
-//   duration,
-//   externalDelay,
-//   externalDuration,
-// }) => {
-//   const [prevSections, setPrevSections] = useState(null);
-//   const [sections, setSections] = useState(null);
-//   const [active, setActive] = useState(context.active);
-//   const [activeId, setActiveId] = useState();
-//   const [externalChanging, setExternalChanging] = useState(false);
-//   const { activeForm } = useContext(ModalContext);
-//   context.setExternalChanging = setExternalChanging;
-//   state.set({ duration, externalDelay, externalDuration });
-
-//   useEffect(() => {
-//     context.activeForm = activeForm;
-//   }, [activeForm]);
-
-//   const controller = useRef();
-//   const value = {
-//     active,
-//     setNewActive,
-//     activeId,
-//     sections,
-//     setSections,
-//     setPrevSections,
-//   };
-//   useEffect(() => {
-//     const label = `ControllerScrollRender${Date.now()}`;
-//     const detector = new Detector(document, setActiveOnScroll);
-//     context.controller = controller.current;
-//     setToRender({
-//       label,
-//       handler: () => scroll.renderTranslateInterpolation(),
-//     });
-//     return () => {
-//       detector.unmount();
-//       removeFromRender(label);
-//     };
-//   }, []);
-//   function setActiveOnScroll({ dir, wheel }) {
-//     if (!scroll.ready(context.sections)) {
-//       return;
-//     }
-//     if (context.activeForm) {
-//       return;
-//     }
-//     // scroll.calcTranslate(context.sections, wheel) // делает диспатч wheel`а для хуков
-//     if (context.changing) {
-//       return;
-//     }
-//     console.log("wheel", wheel);
-//     const innerPos = swipe.getInnerPos(context.sections);
-//     const swipeDir = dir === 1 ? swipe.pos.BOTTOM : swipe.pos.TOP;
-//     if (innerPos === swipeDir || innerPos === swipe.pos.TOPBOTTOM) {
-//       // если мы проскроллили и свайпаем в нужном направлении то все гуд
-//       if (state.validActive(context.active + dir)) {
-//         context.wheel = 0;
-//         scroll.resetWheelTo();
-//         setNewActive(context.active + dir, false);
-//       }
-//       return;
-//     }
-//     context.wheel = wheel;
-//     scroll.calcWheelTo();
-//     // scroll.translate(context.sections, wheel) // теперь постоянно рендерим смещение
-//   }
-//   function setNewActive(index, externalChange = true) {
-//     if (index === context.active) {
-//       return;
-//     }
-//     console.log("changing --- TRUE");
-//     context.changing = true;
-//     context.active = index;
-//     context.externalChange = externalChange;
-//     setActive(index);
-//     setActiveId(context.ids[context.active]);
-//     setExternalChanging(externalChange);
-//   }
-
-//   // sections ререндерятся от active, а переключения рендерим от sections
-//   useEffect(() => {
-//     context.prevsections = prevSections;
-//     context.sections = sections;
-//     swipe.swipe(prevSections, sections, () =>
-//       scroll.resetTranslate(context.sections)
-//     );
-//   }, [sections]);
-
-//   return (
-//     <ControllerContext.Provider value={value}>
-//       <div
-//         ref={controller}
-//         className={cn(
-//           "controller",
-//           state.globalClassName(active),
-//           state.externalChangingClass(externalChanging)
-//         )}
-//       >
-//         {children}
-//       </div>
-//     </ControllerContext.Provider>
-//   );
-// };
-
-// export default Controller;

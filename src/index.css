@@ -7,7 +7,7 @@
   background: url(../public/bg-1.png);
   background-size: cover;
   background-repeat: no-repeat;
-  /* max-height: 100vh; */
+  height: 100vh;
 }
 .bg-b {
   background: url(../public/p-2.png);
@@ -44,4 +44,97 @@
 }
 .gsap-marker-scroller-start {
   display: none !important;
+}
+
+section {
+  margin: 50px;
+  text-align: center;
+}
+
+.animatedDiv {
+  margin-right: -19rem;
+  transition: margin-right 0.5s ease;
+}
+
+.move-left {
+  transition: margin-left 3s ease; /* Add transition property */
+}
+@keyframes floatAnimationUp {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(40px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatAnimationDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(40px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatAnimationLeft {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-40px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes floatAnimationRight {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(40px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes floatAnimationDiagonal {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(20px, 40px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.floating {
+  animation: floatAnimationUp 5s infinite;
+}
+
+.floating:nth-child(2) {
+  animation: floatAnimationDown 5s infinite;
+}
+
+.floating:nth-child(3) {
+  animation: floatAnimationLeft 5s infinite;
+}
+
+.floating:nth-child(4) {
+  animation: floatAnimationRight 5s infinite;
+}
+
+.floating:nth-child(5) {
+  animation: floatAnimationDiagonal 5s infinite;
 }

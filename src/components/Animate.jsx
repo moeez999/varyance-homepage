@@ -56,30 +56,30 @@ export default function Animate() {
         { opacity: 0, scale: 0.8 },
         { opacity: 1, scale: 1 }
       )
-      .fromTo(dashboardRef.current, { x: "0%" }, { x: "-100%" }, 0);
+      .fromTo(dashboardRef.current, { x: "-100%" }, { x: "0%" }, 0);
   }, []);
 
   return (
-    <div>
+    <div className="mt-4">
       {/* Stand Out Section */}
-      <div ref={standOutRef} className="w-full h-[100vh] flex items-center">
-        <p className="text-4xl font-medium px-20">Stand Out</p>
+      <div
+        ref={standOutRef}
+        className="w-full h-[50vh] xs:h-[40vh] flex items-center"
+      >
+        <p className="text-5xl font-bold px-20">stand out</p>
       </div>
 
       {/* Video Section */}
-      <div
-        ref={videoRef}
-        className="rounded-xl h-[100vh] flex justify-center items-center mt-8 px-4"
-      >
-        <video src="video.mp4" controls></video>
+      <div ref={videoRef} className="rounded-xl  mt-8 px-4 mb-8">
+        <video className="rounded-2xl" src="video.mp4" controls></video>
       </div>
 
       {/* Dashboard Section */}
       <div
         ref={dashboardRef}
-        className="bg-d flex h-[100vh] justify-center items-center mt-8 px-4"
+        className="bg-d flex h-[100vh] justify-center items-center mt-8 px-4 xs:h-auto"
       >
-        <div className="rounded-xl shadow-md max-w-[95%]">
+        <div className="rounded-xl shadow-md max-w-[95%] mb-24 mt-16">
           <img className="" src="dashboard.png" alt="" />
         </div>
       </div>

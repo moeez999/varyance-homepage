@@ -4,6 +4,8 @@ module.exports = {
   theme: {
     screens: {
       xs: { max: "431px" },
+      tab: { max: "769px" },
+      desk: { max: "1025px" },
     },
     extend: {
       // You can add custom styles or extend the default Tailwind CSS theme here
